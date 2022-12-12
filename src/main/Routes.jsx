@@ -8,6 +8,6 @@ export default (props) => (
   <Routes>
     <Route exact path="/" element={<Home />} />
     <Route path="/users" element={<Usercrud />} />
-    <Riute path="*" element={<Home />} />
+    <Route path="*" element={<Home />} />
   </Routes>
 );
