@@ -37,6 +37,12 @@ export default class Usercrud extends Component {
     return list;
   }
 
+  updateField(event) {
+    const user = { ...this.state.user };
+    user[event.target.name] = event.target.value;
+    this.setState({ user });
+  }
+
   render() {
     return <Main {...headerProps}>Users</Main>;
   }
