@@ -43,6 +43,8 @@ export default class Usercrud extends Component {
     this.setState({ user });
   }
 
+  renderForm() {}
+
   render() {
     return <Main {...headerProps}>Users</Main>;
   }
