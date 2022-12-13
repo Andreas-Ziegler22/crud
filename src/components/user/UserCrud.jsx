@@ -103,6 +103,13 @@ export default class Usercrud extends Component {
     this.setState({ user });
   }
 
+  remove(user) {
+    axios.delete(`${baseUrl}/${user.id}`).then((resp) => {
+      const list = this.state.list.filter((u) => u !== user);
+      this.setState({ list });
+    });
+  }
+
   render() {
     return <Main {...headerProps}>{this.renderForm()}</Main>;
   }
