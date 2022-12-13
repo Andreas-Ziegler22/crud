@@ -9,6 +9,7 @@ const headerProps = {
 };
 
 const baseUrl = "http://localhost:3001/users/";
+
 const initialState = {
   user: { name: "", email: "" },
   list: [],
@@ -17,12 +18,18 @@ const initialState = {
 export default class Usercrud extends Component {
   state = { ...initialState };
 
+  componentWillMount() {
+    axios(baseUrl).then((resp) => {
+      this.setState({ list: resp.data });
+    });
+  }
+
   clear() {
     this.setState({ user: initialState.user });
   }
 
   save() {
-    const user = this.setState.user;
+    const user = this.state.user;
     const method = user.id ? "put" : "post";
     const url = user.id ? `${baseUrl}/${user.id}` : baseUrl;
     axios[method](url, user).then((resp) => {
