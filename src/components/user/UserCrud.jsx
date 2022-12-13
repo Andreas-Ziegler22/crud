@@ -44,45 +44,55 @@ export default class Usercrud extends Component {
   }
 
   renderForm() {
-    <div className="form">
-      <div className="row">
-        <div className="col-12 col-md-6">
-          <div className="form-group">
-            <label>Name</label>
-            <input type="text" className="form-control" />
-            name="name" value={this.state.user.name}
-            onChange={(e) => this.updateField(e)}
-            placeholder="Type your name"
+    return (
+      <div className="form">
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <div className="form-group">
+              <label>Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="name"
+                value={this.state.user.name}
+                onChange={(e) => this.updateField(e)}
+                placeholder="Type your name"
+              />
+            </div>
+          </div>
+          <div className="col-12 col-md-6">
+            <div className="form-group">
+              <label>E-mail</label>
+              <input
+                type="text"
+                className="form-control"
+                name="email"
+                value={this.state.user.email}
+                onChange={(e) => this.updateField(e)}
+                placeholder="Type your email"
+              />
+            </div>
           </div>
         </div>
-        <div className="col-12 col-md-6">
-          <div className="form-group">
-            <label>E-mail</label>
-            <input type="text" className="form-control" />
-            name="email" value={this.state.user.email}
-            onChange={(e) => this.updateField(e)}
-            placeholder="Type your email"
+        <hr />
+        <div className="row">
+          <div className="col-12 d-flex justify-content-end">
+            <button className="btn btn-primary" onClick={(e) => this.save(e)}>
+              Salve
+            </button>
+            <button
+              className="btn btn-secondary ml-2"
+              onClick={(e) => this.clear(e)}
+            >
+              Cancel
+            </button>
           </div>
         </div>
       </div>
-      <hr />
-      <div className="row">
-        <div className="col-12 d-flex justify-content-end">
-          <button className="btn btn-primary" onClick={(e) => this.save(e)}>
-            Salve
-          </button>
-          <button
-            className="btn btn-secondary ml-2"
-            onClick={(e) => this.clear(e)}
-          >
-            Cancel
-          </button>
-        </div>
-      </div>
-    </div>;
+    );
   }
 
   render() {
-    return <Main {...headerProps}>Users</Main>;
+    return <Main {...headerProps}>{this.renderForm()}</Main>;
   }
 }
