@@ -110,6 +110,12 @@ export default class Usercrud extends Component {
     });
   }
 
+  renderTable(){
+    return(
+      
+    )
+  }
+
   render() {
     return <Main {...headerProps}>{this.renderForm()}</Main>;
   }
