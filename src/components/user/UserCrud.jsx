@@ -99,6 +99,10 @@ export default class Usercrud extends Component {
     );
   }
 
+  load(user) {
+    this.setState({ user });
+  }
+
   render() {
     return <Main {...headerProps}>{this.renderForm()}</Main>;
   }
