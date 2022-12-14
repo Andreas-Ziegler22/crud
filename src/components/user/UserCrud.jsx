@@ -138,7 +138,7 @@ export default class Usercrud extends Component {
               <i className="fa fa-pencil"></i>
             </button>
             <button
-              className="btn btn-danger ml-2"
+              className="btn btn-danger "
               onClick={() => this.remove(user)}
             >
               <i className="fa fa-trash"></i>
